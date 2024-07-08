@@ -10,7 +10,7 @@ import 'AddCourse.dart';
 import 'Attendance.dart';
 import 'Authentication_Screen.dart';
 import 'AttendanceSucces.dart';
-
+import 'AttendanceInfo.dart';
 void main() {
   runApp(MyApp());
 }
@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
          '/backToHome': (context) => HomeScreen(),
          '/course': (context) => CoursesScreen(),
          '/add_courses': (context) => AddCourseScreen(),
-         '/BiometricAuthScreen' : (context) => StudentInterface(),
-        // '/BiometricAuthScreen' : (context) => SuccessScreen(),
+         '/BiometricAuthScreen' : (context) => AuthScreen(),
+        '/detailedInfo' : (context) => AttendanceInfoScreen(),
 
        },
     );

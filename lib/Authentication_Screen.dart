@@ -1,22 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:wifi_scan/wifi_scan.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:async';
 
-class StudentInterface extends StatefulWidget {
+class AuthScreen extends StatefulWidget {
   @override
   _StudentInterfaceState createState() => _StudentInterfaceState();
 }
 
-class _StudentInterfaceState extends State<StudentInterface> {
+class _StudentInterfaceState extends State<AuthScreen> {
   List<WiFiAccessPoint> _networks = [];
   final LocalAuthentication auth = LocalAuthentication();
-  bool _isScanning = true; // Track scanning status
+  bool _isScanning = true;
 
   @override
   void initState() {
     super.initState();
-    scanNetworks();
+    requestPermissionsAndScanNetworks();
+  }
+
+  Future<void> requestPermissionsAndScanNetworks() async {
+    var status = await Permission.locationWhenInUse.status;
+    if (!status.isGranted) {
+      status = await Permission.locationWhenInUse.request();
+    }
+    if (status.isGranted) {
+      scanNetworks();
+    } else {
+      print("Location permission denied.");
+      setState(() {
+        _isScanning = false;
+      });
+    }
   }
 
   Future<void> scanNetworks() async {
@@ -26,7 +42,7 @@ class _StudentInterfaceState extends State<StudentInterface> {
       WiFiScan.instance.onScannedResultsAvailable.listen((results) {
         setState(() {
           _networks = results;
-          _isScanning = false; // Scanning complete
+          _isScanning = false;
         });
       });
     } else {
@@ -52,6 +68,8 @@ class _StudentInterfaceState extends State<StudentInterface> {
   }
 
   Future<bool> _connectToWifi(String ssid, String password) async {
+    // Here you should implement the connection logic.
+    // This is a placeholder to simulate successful connection.
     return Future.delayed(Duration(seconds: 2), () => true);
   }
 
@@ -79,6 +97,7 @@ class _StudentInterfaceState extends State<StudentInterface> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text("Attendance marked successfully!")),
     );
+    // Implement your attendance marking logic here
   }
 
   Future<String?> _getPasswordFromUser() async {
@@ -118,13 +137,22 @@ class _StudentInterfaceState extends State<StudentInterface> {
     final containerHeight = size.height / 2;
 
     return Scaffold(
+      appBar: AppBar(
+        //title: Text('Student Interface'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ),
       body: Column(
         children: [
           Container(
-            height: containerHeight,
+            height: containerHeight-30,
             decoration: BoxDecoration(color: Colors.blue),
             child: Center(
-              child: Image.asset('assets/pic.png', width: 150, height: 150),
+              child: Image.asset('assets/pic.png'),
             ),
           ),
           Expanded(
@@ -132,7 +160,7 @@ class _StudentInterfaceState extends State<StudentInterface> {
               children: [
                 Positioned.fill(
                   child: Image.asset(
-                    'assets/wifi2.png',
+                    'assets/wifi2.png', // Replace with your image path
                     fit: BoxFit.cover,
                   ),
                 ),

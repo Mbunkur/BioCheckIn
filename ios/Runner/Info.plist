@@ -47,5 +47,11 @@
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
     <string>Authenticating using Face ID</string>
+    <key>NSFaceIDUsageDescription</key>
+    <string>We need to use your Face ID for biometric authentication</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to scan for Wi-Fi networks</string>
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>We need Bluetooth access to connect to nearby devices</string>
 </dict>
 </plist>

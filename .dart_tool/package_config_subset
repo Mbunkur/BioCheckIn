@@ -102,6 +102,14 @@ path
 3.0
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/path-1.9.0/
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/path-1.9.0/lib/
+permission_handler
+2.12
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/permission_handler-8.3.0/
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/permission_handler-8.3.0/lib/
+permission_handler_platform_interface
+2.14
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.12.0/
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.12.0/lib/
 plugin_platform_interface
 3.0
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.8/
@@ -110,6 +118,10 @@ provider
 2.12
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/provider-6.1.2/
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/provider-6.1.2/lib/
+simple_gesture_detector
+2.12
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/simple_gesture_detector-0.2.1/
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/simple_gesture_detector-0.2.1/lib/
 source_span
 2.18
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/source_span-1.10.0/
@@ -126,6 +138,10 @@ string_scanner
 2.18
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/string_scanner-1.2.0/lib/
+table_calendar
+3.0
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/table_calendar-3.1.2/
+file:///home/mbunkur/.pub-cache/hosted/pub.dev/table_calendar-3.1.2/lib/
 term_glyph
 2.12
 file:///home/mbunkur/.pub-cache/hosted/pub.dev/term_glyph-1.2.1/

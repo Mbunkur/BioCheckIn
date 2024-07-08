@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AttendanceScreen extends StatelessWidget {
@@ -220,54 +221,58 @@ class AttendanceScreen extends StatelessWidget {
 
                  ),
                  SizedBox(height: 10,),
-                 Container(
-                   padding: EdgeInsets.all(5),
-                   height: 110,
-                   width: double.infinity,
-                   decoration: BoxDecoration(
-                     color: Colors.white,
-                   ),
-                   child: Row(
-                     children: [
-                       Column(
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text('CEF213',
-                             style: TextStyle(
-                                 color: Colors.blue, fontSize: 25),),
-                           Row(
-                             children: [
-                               Text('15-10-2023 ',
-                                 style: TextStyle(color: Colors.black, fontSize: 15),),
-                               Text('to ',
-                                 style: TextStyle(color: Color(0xFFA6A2A2)),),
-                               Text('06-08-2024',
-                                 style: TextStyle(color: Colors.black, fontSize: 15),),
-                             ],
-                           ),
-                           Row(
-                             children: [
-                               Text('Incharge - ',
-                                 style: TextStyle(color: Color(0xFFA6A2A2)),),
-                               Text('DR. SOP LIONEL',
-                                 style: TextStyle(color: Colors.black, fontSize: 17),),
-                             ],
-                           ),
-                         ],
-                       ),
-                       Expanded(child: SizedBox()),
-                       Column(
-                         children: [
-                           Image.asset('assets/attendance2.png', height: 60,),
-                           Text('Attendance',
-                             style: TextStyle(color: Color(0xFFA6A2A2)),),
-                           Text('Info',
-                             style: TextStyle(color: Color(0xFFA6A2A2)),),
-                         ],
-                       ),
-                     ],
-                   ),
+                 GestureDetector( onTap: (){
+                   Navigator.pushNamed(context, '/detailedInfo');
+                 },
+                   child: Container(
+                     padding: EdgeInsets.all(5),
+                     height: 110,
+                     width: double.infinity,
+                     decoration: BoxDecoration(
+                       color: Colors.white,
+                     ),
+                     child: Row(
+                       children: [
+                         Column(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text('CEF213',
+                               style: TextStyle(
+                                   color: Colors.blue, fontSize: 25),),
+                             Row(
+                               children: [
+                                 Text('15-10-2023 ',
+                                   style: TextStyle(color: Colors.black, fontSize: 15),),
+                                 Text('to ',
+                                   style: TextStyle(color: Color(0xFFA6A2A2)),),
+                                 Text('06-08-2024',
+                                   style: TextStyle(color: Colors.black, fontSize: 15),),
+                               ],
+                             ),
+                             Row(
+                               children: [
+                                 Text('Incharge - ',
+                                   style: TextStyle(color: Color(0xFFA6A2A2)),),
+                                 Text('DR. SOP LIONEL',
+                                   style: TextStyle(color: Colors.black, fontSize: 17),),
+                               ],
+                             ),
+                           ],
+                         ),
+                         Expanded(child: SizedBox()),
+                         Column(
+                           children: [
+                             Image.asset('assets/attendance2.png', height: 60,),
+                             Text('Attendance',
+                               style: TextStyle(color: Color(0xFFA6A2A2)),),
+                             Text('Info',
+                               style: TextStyle(color: Color(0xFFA6A2A2)),),
+                           ],
+                         ),
+                       ],
+                     ),
 
+                   ),
                  ),
                  SizedBox(height: 10,),
                  Container(
