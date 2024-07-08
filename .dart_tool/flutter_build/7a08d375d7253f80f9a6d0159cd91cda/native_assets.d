@@ -1,0 +1,1 @@
+ /home/mbunkur/Desktop/bio_check_in/.dart_tool/flutter_build/7a08d375d7253f80f9a6d0159cd91cda/native_assets.yaml: 
