@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: AttendanceSuccessScreen(),
-  ));
-}
 
 class AttendanceSuccessScreen extends StatelessWidget {
   @override
